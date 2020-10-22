@@ -18,21 +18,24 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: #fff;
   padding: 40px;
+  overflow: scroll;
   ${media.mobile`
     height: 50vh;
     margin-top: 30vh;
-    overflow: scroll;
     border-top: 4px solid #000;
     border-bottom: 4px solid #000;
   `}
 `;
 
 const LinkWrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   ${media.mobile`
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
     margin-bottom: 20px;
   `}
 `;
@@ -41,7 +44,6 @@ const TextWrapper = styled.div`
   display: flex;
   margin-right: 25px;
   align-items: center;
-
   ${media.mobile`
     flex-direction: column;
     margin: 0 auto 10px;
@@ -67,6 +69,7 @@ const DateString = styled.div`
 
 const LinkBtnWrapper = styled.div`
   display: flex;
+  height: 40px;
 `;
 
 const LinkBtn = styled.div`
