@@ -18,8 +18,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: #fff;
   padding: 40px;
-  overflow: scroll;
   ${media.mobile`
+    overflow: scroll;
     height: 50vh;
     margin-top: 30vh;
     border-top: 4px solid #000;
@@ -112,7 +112,7 @@ const DATASET: DataProps[] = [
     title: '💪 설문 결과 알리미: 코로나19, 유연근무제, 리모트 인식 등',
     date: '2020.03.10',
     notionLink: 'https://www.notion.so/100100/19-2020-03-10-c35c6e723c4241368da3c02efc5e3d95',
-    pdfLink: 'https://bit.ly/Wanted-HRSurvey-3',
+    pdfLink: 'http://bit.ly/Wanted-HRSurvey3',
   },
   {
     id: 4,
@@ -124,9 +124,9 @@ const DATASET: DataProps[] = [
   {
     id: 5,
     title: `🤯 인담자 54%, '성격파탄 일잘러'보다 '근면성실 일못러'가 낫다!`,
-    date: '2020.02.04',
+    date: '2020.05.19',
     notionLink: 'https://www.notion.so/100100/54-2020-05-19-0a0a1b34bba54b9d91174ab6c790a66b',
-    pdfLink: 'https://bit.ly/Wanted-HRSurvey-5',
+    pdfLink: 'http://bit.ly/Wanted-HRSurvey5',
   },
   {
     id: 6,
