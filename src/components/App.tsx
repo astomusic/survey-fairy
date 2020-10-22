@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import header from 'images/header-s.png';
 
-import GlobalStyle from '../styles/global';
+import GlobalStyle from 'root/styles/global';
+import { media } from 'root/styles/style';
 
 import { Welcome } from './pages';
 
@@ -19,6 +20,9 @@ const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
   background-image: url(${header});
+  ${media.mobile`
+    background-size: contain;
+  `}
 `;
 
 const App = () => {
