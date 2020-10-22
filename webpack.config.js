@@ -1,50 +1,46 @@
-const createStyledComponentsTransformer = require("typescript-plugin-styled-components")
-  .default;
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
 const styledComponentsTransformer = createStyledComponentsTransformer({
   ssr: false,
 });
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const port = process.env.PORT || 8080;
 
 module.exports = (env) => {
   return {
-    mode:
-      !!process.env.WEBPACK_DEV_SERVER || env.env === "dev"
-        ? "development"
-        : "production",
-    entry: ["./src/index.tsx"],
+    mode: !!process.env.WEBPACK_DEV_SERVER || env.env === 'dev' ? 'development' : 'production',
+    entry: ['./src/index.tsx'],
     optimization: {
       splitChunks: {
         cacheGroups: {
           vendor: {
-            chunks: "initial",
-            name: "vendor",
+            chunks: 'initial',
+            name: 'vendor',
             enforce: true,
           },
         },
       },
     },
     output: {
-      publicPath: "/",
-      path: __dirname + "/dist",
-      chunkFilename: "static/[name].[chunkhash].js",
-      filename: "static/bundle.[hash].js",
+      publicPath: '/',
+      path: __dirname + '/dist',
+      chunkFilename: 'static/[name].[chunkhash].js',
+      filename: 'static/bundle.[hash].js',
     },
     module: {
       rules: [
         {
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          loader: "tslint-loader",
+          loader: 'tslint-loader',
         },
         {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
             getCustomTransformers: () => ({
               before: [styledComponentsTransformer],
@@ -55,10 +51,10 @@ module.exports = (env) => {
           test: /\.css$/,
           use: [
             {
-              loader: "style-loader",
+              loader: 'style-loader',
             },
             {
-              loader: "css-loader",
+              loader: 'css-loader',
             },
           ],
         },
@@ -66,9 +62,9 @@ module.exports = (env) => {
           test: /\.(png|svg|jpg|jpeg|gif)$/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                name: "images/[name].[ext]",
+                name: 'images/[name].[ext]',
               },
             },
           ],
@@ -77,9 +73,9 @@ module.exports = (env) => {
           test: /\.mp4$/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                name: "images/[name].[ext]",
+                name: 'images/[name].[ext]',
               },
             },
           ],
@@ -88,9 +84,9 @@ module.exports = (env) => {
           test: /\.(woff|otf)$/,
           use: [
             {
-              loader: "file-loader",
+              loader: 'file-loader',
               options: {
-                name: "fonts/[name].[ext]",
+                name: 'fonts/[name].[ext]',
               },
             },
           ],
@@ -99,7 +95,7 @@ module.exports = (env) => {
           test: /\.(md)$/,
           use: [
             {
-              loader: "raw-loader",
+              loader: 'raw-loader',
             },
           ],
         },
@@ -107,21 +103,22 @@ module.exports = (env) => {
     },
     resolve: {
       alias: {
-        root: path.resolve(__dirname, "src/"),
-        images: path.resolve(__dirname, "public/images"),
-        fonts: path.resolve(__dirname, "public/fonts"),
-        docs: path.resolve(__dirname, "public/docs"),
+        root: path.resolve(__dirname, 'src/'),
+        images: path.resolve(__dirname, 'public/images'),
+        fonts: path.resolve(__dirname, 'public/fonts'),
+        docs: path.resolve(__dirname, 'public/docs'),
       },
-      extensions: [".ts", ".tsx", ".js", "jsx"],
+      extensions: ['.ts', '.tsx', '.js', 'jsx'],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "public/index.html",
-        dev: !!process.env.WEBPACK_DEV_SERVER || env.env === "dev",
+        template: 'public/index.html',
+        favicon: 'public/images/header-s.png',
+        dev: !!process.env.WEBPACK_DEV_SERVER || env.env === 'dev',
       }),
     ],
     devServer: {
-      host: "local.survey-fairy.com",
+      host: 'local.survey-fairy.com',
       port: port,
       open: true,
       historyApiFallback: true,

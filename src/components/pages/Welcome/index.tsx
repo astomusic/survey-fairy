@@ -169,7 +169,7 @@ const Welcome = () => {
           </TextWrapper>
           <LinkBtnWrapper>
             <LinkBtn onClick={handleLink(item.notionLink)}>{'노션'}</LinkBtn>
-            <LinkBtn>{'PDF'}</LinkBtn>
+            <LinkBtn onClick={handleLink(item.pdfLink)}>{'PDF'}</LinkBtn>
           </LinkBtnWrapper>
         </LinkWrapper>
       ))}
