@@ -113,7 +113,7 @@ module.exports = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         template: 'public/index.html',
-        favicon: 'public/images/header-s.png',
+        favicon: 'public/favicon.ico',
         dev: !!process.env.WEBPACK_DEV_SERVER || env.env === 'dev',
       }),
     ],
