@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled from 'styled-components';
 
-import header from 'images/header-s.png';
+import bg from 'images/bg-mask.png';
 
 import GlobalStyle from 'root/styles/global';
 import { media } from 'root/styles/style';
@@ -19,7 +19,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  background-image: url(${header});
+  background-image: url(${bg});
   ${media.mobile`
     background-size: contain;
   `}
