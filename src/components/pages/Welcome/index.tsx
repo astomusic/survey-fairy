@@ -154,6 +154,14 @@ const DATASET: DataProps[] = [
     notionLink: 'https://www.notion.so/100100/19-2020-10-20-42f7097fd3fe4303ade756c3bc6c28bc',
     pdfLink: 'https://bit.ly/Wanted-HRSurvey-10',
   },
+  {
+    id: 10,
+    title: `💰 개발 직군 신입 연봉 최저 수준은 3,000~3,300. 비개발 직군은?`,
+    date: '2020.11.12',
+    notionLink:
+      'https://www.notion.so/100100/3-000-3-300-20-11-12-bbceb6c5438e478e9b35deb9600cdfef',
+    pdfLink: 'https://bit.ly/3ePjbJ6',
+  },
 ];
 
 const Welcome = () => {
