@@ -162,6 +162,13 @@ const DATASET: DataProps[] = [
       'https://www.notion.so/100100/3-000-3-300-20-11-12-bbceb6c5438e478e9b35deb9600cdfef',
     pdfLink: 'https://bit.ly/3ePjbJ6',
   },
+  {
+    id: 11,
+    title: `🚀 2020년 설문을 마무리하며, 인담자들의 내년 계획은?`,
+    date: '2020.12.10',
+    notionLink: 'https://www.notion.so/100100/2020-20-12-10-3e3bdf836d88492a98b8aa81bef1f991',
+    pdfLink: 'https://bit.ly/Wanted-HRSurvey12',
+  },
 ];
 
 const Welcome = () => {
