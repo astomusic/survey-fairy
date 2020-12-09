@@ -167,7 +167,7 @@ const DATASET: DataProps[] = [
     title: `🚀 2020년 설문을 마무리하며, 인담자들의 내년 계획은?`,
     date: '2020.12.10',
     notionLink: 'https://www.notion.so/100100/2020-20-12-10-3e3bdf836d88492a98b8aa81bef1f991',
-    pdfLink: 'https://bit.ly/Wanted-HRSurvey12',
+    pdfLink: 'https://bit.ly/wanted-HRSurvey12',
   },
 ];
 
