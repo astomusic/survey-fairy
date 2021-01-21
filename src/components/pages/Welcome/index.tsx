@@ -7,8 +7,10 @@ interface DataProps {
   id: number;
   title: string;
   date: string;
-  notionLink: string;
-  pdfLink: string;
+  webPage?: string;
+  notionLink?: string;
+  pdfLink?: string;
+  bar?: string;
 }
 
 const Wrapper = styled.div`
@@ -66,8 +68,14 @@ const DateString = styled.div`
 `;
 
 const LinkBtnWrapper = styled.div`
-  display: flex;
+  display: grid;
   height: 40px;
+  width: 180px;
+  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  grid-column-gap: 10px;
+  grid-template-rows: 1fr;
+  justify-content: flex-start;
+  overflow: hidden;
 `;
 
 const LinkBtn = styled.div`
@@ -76,18 +84,27 @@ const LinkBtn = styled.div`
   align-items: center;
   font-size: 16px;
   font-weight: 600;
-  width: 80px;
+  width: 100%;
   height: 40px;
   color: #fff;
   background-color: #000;
   border-radius: 20px;
-  margin: 0 5px;
   user-select: none;
   cursor: pointer;
   &:hover {
-    /* color: #f80c1b; */
     background-color: #f80c1b;
   }
+`;
+
+const Bar = styled.div`
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 10px;
 `;
 
 const DATASET: DataProps[] = [
@@ -97,6 +114,7 @@ const DATASET: DataProps[] = [
     date: '2020.02.04',
     notionLink: 'https://www.notion.so/100100/2020-02-04-4ca51c5eb2804d78999afed83f72f496',
     pdfLink: 'https://bit.ly/Wanted-HRSurvey-1',
+    bar: '2020',
   },
   {
     id: 2,
@@ -169,6 +187,13 @@ const DATASET: DataProps[] = [
     notionLink: 'https://www.notion.so/100100/2020-20-12-10-3e3bdf836d88492a98b8aa81bef1f991',
     pdfLink: 'https://bit.ly/wanted-HRSurvey12',
   },
+  {
+    id: 12,
+    title: `💡 설문팀 채용 동향: 수시채용 계속 73% 신입채용 예정 35%`,
+    date: '2021.01.14',
+    webPage: `https://mailchi.mp/ac744475b392/hrsurvey-202101`,
+    bar: '2021',
+  },
 ];
 
 const Welcome = () => {
@@ -178,16 +203,20 @@ const Welcome = () => {
   return (
     <Wrapper>
       {DATASET.map((item) => (
-        <LinkWrapper key={item.id}>
-          <TextWrapper>
-            <Title key={item.id}>{item.title}</Title>
-            <DateString>{`(${item.date})`}</DateString>
-          </TextWrapper>
-          <LinkBtnWrapper>
-            <LinkBtn onClick={handleLink(item.notionLink)}>{'노션'}</LinkBtn>
-            <LinkBtn onClick={handleLink(item.pdfLink)}>{'PDF'}</LinkBtn>
-          </LinkBtnWrapper>
-        </LinkWrapper>
+        <React.Fragment key={item.id}>
+          {item.bar && <Bar>{item.bar}</Bar>}
+          <LinkWrapper key={item.id}>
+            <TextWrapper>
+              <Title key={item.id}>{item.title}</Title>
+              <DateString>{`(${item.date})`}</DateString>
+            </TextWrapper>
+            <LinkBtnWrapper>
+              {item.notionLink && <LinkBtn onClick={handleLink(item.notionLink)}>{'노션'}</LinkBtn>}
+              {item.pdfLink && <LinkBtn onClick={handleLink(item.pdfLink)}>{'PDF'}</LinkBtn>}
+              {item.webPage && <LinkBtn onClick={handleLink(item.webPage)}>{'WEB'}</LinkBtn>}
+            </LinkBtnWrapper>
+          </LinkWrapper>
+        </React.Fragment>
       ))}
     </Wrapper>
   );
