@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   background-color: #fff;
   padding: 40px;
+  overflow: auto;
   ${media.mobile`
     overflow: scroll;
     height: 50vh;
