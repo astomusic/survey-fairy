@@ -195,6 +195,12 @@ const DATASET: DataProps[] = [
     webPage: `https://mailchi.mp/ac744475b392/hrsurvey-202101`,
     bar: '2021',
   },
+  {
+    id: 13,
+    title: `🔥 인담자가 뽑은 해야할 것 같은 자기계발 2위 데이터・AI・코딩, 1위는?`,
+    date: '2021.02.10',
+    webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=f853ddfb7c`,
+  },
 ];
 
 const Welcome = () => {
