@@ -201,6 +201,12 @@ const DATASET: DataProps[] = [
     date: '2021.02.10',
     webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=f853ddfb7c`,
   },
+  {
+    id: 14,
+    title: ` 🔧 다른 회사에선 어떤 HR 솔루션과 툴을 활용하는지 설문 결과로 확인하세요`,
+    date: '2021.03.11',
+    webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=35a069f0bc`,
+  },
 ];
 
 const Welcome = () => {
