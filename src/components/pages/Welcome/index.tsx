@@ -207,6 +207,12 @@ const DATASET: DataProps[] = [
     date: '2021.03.11',
     webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=35a069f0bc`,
   },
+  {
+    id: 15,
+    title: ` 🚦 "남성은 여성보다 취업하기 쉽다", 현업 HR의 생각은 어떨까요?`,
+    date: '2021.04.08',
+    webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=00930993a4`,
+  },
 ];
 
 const Welcome = () => {
