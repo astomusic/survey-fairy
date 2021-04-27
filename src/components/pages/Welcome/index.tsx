@@ -30,11 +30,14 @@ const Wrapper = styled.div`
 
 const LinkWrapper = styled.div`
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  grid-template-rows: 1fr;
   justify-content: space-between;
   align-items: center;
   ${media.mobile`
     display: grid;
+    grid-template-columns: 1fr;
     justify-content: center;
     justify-items: center;
     margin-bottom: 20px;
@@ -72,7 +75,7 @@ const LinkBtnWrapper = styled.div`
   display: grid;
   height: 40px;
   width: 180px;
-  grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
   grid-column-gap: 10px;
   grid-template-rows: 1fr;
   justify-content: flex-start;
@@ -94,6 +97,27 @@ const LinkBtn = styled.div`
   cursor: pointer;
   &:hover {
     background-color: #f80c1b;
+  }
+`;
+
+const SubscribeBtn = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  background-color: #f80c1b;
+  border-radius: 20px;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: #000;
   }
 `;
 
@@ -216,11 +240,13 @@ const DATASET: DataProps[] = [
 ];
 
 const Welcome = () => {
+  const subscribeUrl = `https://us20.list-manage.com/survey?u=8a12f4929371a07ab5a39c23c&id=13f8cc078f`;
   const handleLink = (target: string) => () => {
     window.open(target);
   };
   return (
     <Wrapper>
+      <SubscribeBtn onClick={handleLink(subscribeUrl)}>{'구독하기'}</SubscribeBtn>
       {DATASET.map((item) => (
         <React.Fragment key={item.id}>
           {item.bar && <Bar>{item.bar}</Bar>}
