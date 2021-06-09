@@ -239,7 +239,7 @@ const DATASET: DataProps[] = [
   },
   {
     id: 16,
-    title: ` 💪 직원 경험 신경 쓰는 이유 2위는 '성과・매출 증대', 1위는?`,
+    title: ` 🥇 직원 경험 신경 쓰는 이유 2위는 '성과・매출 증대', 1위는?`,
     date: '2021.05.20',
     webPage: `https://us20.campaign-archive.com/?u=8a12f4929371a07ab5a39c23c&id=a0f5067ec3`,
   },
